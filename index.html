@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2YZHEPBR2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W2YZHEPBR2');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShakeWay - Descubre las mejores recetas de batidos saludables, smoothies y bebidas nutritivas. Guías completas para preparar batidos deliciosos.">
+    <meta name="keywords" content="batidos, smoothies, recetas saludables, batidos de frutas, batidos proteicos, bebidas nutritivas">
+    <title>ShakeWay - Las Mejores Recetas de Batidos y Smoothies Saludables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FDF5E6; /* Light Sand */
+        }
+        header {
+            background: linear-gradient(135deg, rgba(255, 99, 71, 0.8) 0%, rgba(255, 193, 7, 0.7) 100%), /* Coral to Mango gradient */
+                        url('https://images.unsplash.com/photo-1542673759-83a3a4c15579?w=1920&h=400&fit=crop') center/cover;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.2;
+        }
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400; /* Pacifico is not a variable font, 400 is standard */
+            letter-spacing: 0px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        header .header-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header .btn {
+            padding: 0.8rem 2rem;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        header .btn:hover {
+            background: white;
+            color: #FF6347; /* Coral */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        nav {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #00A0A0; /* Teal */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FF6347; /* Coral */
+        }
+        .menu-toggle {
+            display: none; /* Oculto por defecto */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #00A0A0;
+            transition: all 0.3s ease-in-out;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .intro {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 160, 160, 0.15);
+            border-left: 5px solid #00A0A0; /* Teal */
+        }
+        .intro h2 {
+            color: #00A0A0; /* Teal */
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .intro p:first-of-type::first-letter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FF6347; /* Coral */
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+        .power-up-section {
+            background: linear-gradient(135deg, #FFF0E5 0%, #FEF9E7 100%); /* Light peachy/sandy gradient */
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 99, 71, 0.15);
+            border-top: 5px solid #FFC107; /* Mango */
+        }
+        .power-up-section h2 {
+            color: #FF6347; /* Coral */
+            margin-bottom: 1rem;
+        }
+        .power-up-section .calc-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .power-up-section .calc-btn {
+            padding: 0.8rem 2rem;
+            background: #FF6347; /* Coral */
+            border: 2px solid #FF6347;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .power-up-section .calc-btn:hover {
+            background: #FFA500; /* Darker Orange */
+            border-color: #FFA500;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .recipes-section {
+            background: linear-gradient(135deg, #FF6347 0%, #FFC107 100%);
+            color: white;
+            padding: 3rem 2rem; /* Add some padding */
+            border-radius: 15px; /* Consistent border-radius */
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Consistent shadow */
+        }
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            color: #333; /* FIX: Set dark color for text inside the card */
+        }
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 160, 160, 0.2); /* Teal shadow */
+        }
+        .recipe-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .recipe-image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #00A0A0 0%, #FFC107 100%); /* Teal to Mango */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        .recipe-header {
+            background: none; /* Removed gradient to show card's white background */
+            color: #333; /* Dark text for contrast */
+            padding: 1.5rem;
+        }
+        .recipe-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #FF6347; /* Use a theme color for the heading */
+        }
+        .recipe-header p { /* New rule to style the <p> tag inside header */
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .recipe-content {
+            padding: 1.5rem;
+        }
+        .recipe-content h4 {
+            color: #00A0A0; /* Teal */
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .recipe-content ul,
+        .recipe-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .recipe-content li {
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+        }
+        .recipe-content ol li {
+            padding-left: 0.5rem;
+        }
+        .benefits {
+            background: linear-gradient(135deg, #FFC107 0%, #FF6347 100%); /* Mango to Coral */
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            color: white;
+        }
+        .benefits h2 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .benefits > p {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .benefit-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            border-left: 4px solid #fff;
+            transition: all 0.3s ease;
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .benefit-item h3 {
+            color: #FF6347; /* Coral */
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .benefit-item p {
+            color: #333;
+        }
+        .tips {
+            background: linear-gradient(135deg, #F0FFF0 0%, #FFFACD 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(255, 193, 7, 0.15);
+        }
+        .tips h2 {
+            color: #00A0A0; /* Teal */
+            margin-bottom: 2rem; /* Increased margin */
+            font-size: 2rem;
+            text-align: center; /* Centered title */
+        }
+        .tips ol {
+            list-style: none; /* Remove default numbers */
+            padding-left: 0;
+        }
+        .tips li {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid #FFC107;
+            transition: all 0.3s ease;
+            line-height: 1.8;
+        }
+        .tips li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .tips li strong {
+            color: #FF6347; /* Coral */
+        }
+        footer {
+            background: #008080; /* Solid Teal */
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        footer p:first-child {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .ad-space {
+            background: linear-gradient(135deg, #F0FFF0 0%, #E0FFFF 100%); /* Light mint/cyan gradient */
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 15px;
+            border: 3px dashed rgba(0, 160, 160, 0.4);
+            transition: all 0.3s ease;
+        }
+        .ad-space:hover {
+            border-color: rgba(0, 160, 160, 0.7);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .equipo-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #FF6347 0%, #FFC107 100%); /* Coral to Mango */
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* More generic shadow */
+            color: white; /* White text for the section */
+        }
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .equipo-card {
+            background: #FDF5E6; /* Light Sand - internal card is light */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #FFF;
+        }
+        .equipo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 160, 160, 0.2);
+            border-color: #00A0A0;
+        }
+        .equipo-product-image { /* New style for actual images */
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            border-radius: 8px; /* Slightly rounded corners for images */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: white; /* Ensure consistent background for images */
+            padding: 5px;
+        }
+        .equipo-card h3 {
+            color: #FF6347; /* Coral for contrast on white card */
+            margin-bottom: 0.5rem;
+        }
+        .equipo-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            color: #333; /* Darker text for contrast on white card */
+        }
+        .btn-equipo {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #FF6347;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #FF6347;
+        }
+        .btn-equipo:hover {
+            background: #FFA500;
+            border-color: #FFA500;
+            color: white;
+        }
+        
+        .blog-section {
+            padding: 3rem 2rem;
+            background: #FDF5E6; /* Light Sand, consistent with body */
+        }
+        .blog-section h2 {
+            text-align: center;
+            color: #00A0A0; /* Teal */
+            margin-bottom: 2.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 160, 160, 0.2);
+        }
+        .article-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .article-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #FF6347;
+        }
+        .article-card-content p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .btn-article {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #FF6347;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #FF6347;
+            align-self: flex-start;
+        }
+        .btn-article:hover {
+            background: #FFA500;
+            border-color: #FFA500;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.1rem;
+            }
+            header {
+                padding: 3rem 1rem;
+            }
+            nav {
+                justify-content: space-between;
+                padding: 1rem 2rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            #nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1.5rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 2rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            #nav-links.show {
+                display: flex;
+            }
+            .recipes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3912691751197961"
+     crossorigin="anonymous"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196088" async data-cfasync="false"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ShakeWay: Recetas de Batidos y Smoothies Saludables</h1>
+            <p>Tu guía definitiva para batidos y smoothies saludables</p>
+            <div class="header-buttons">
+                <a href="#recetas" class="btn">Ver Recetas</a>
+                <a href="calculadora.html" class="btn">Calcular Proteína</a>
+                <a href="creatina.html" class="btn">Calcular Creatina</a>
+            </div>
+        </div>
+    </header>
+
+            <nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#recetas">Recetas</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#consejos">Consejos</a></li>
+                <li><a href="#equipo">Equipo Recomendado</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="calculadora.html">Calculadora de Proteína</a></li>
+                <li><a href="creatina.html">Calculadora de Creatina</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <section id="inicio" class="intro">
+            <h2>Bienvenido a ShakeWay</h2>
+            <p>Descubre el mundo de los batidos saludables y deliciosos. En ShakeWay encontrarás las mejores recetas de smoothies, batidos proteicos, batidos de frutas y bebidas nutritivas para mejorar tu salud y bienestar. Ya sea que busques perder peso, ganar músculo, o simplemente disfrutar de bebidas deliciosas, tenemos la receta perfecta para ti.</p>
+            <p style="margin-top: 1rem;">Los batidos son una excelente manera de consumir frutas, verduras y nutrientes esenciales de forma rápida y deliciosa. Perfectos para el desayuno, después del ejercicio, o como snack saludable durante el día.</p>
+        </section>
+
+<!-- anuncio adsense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3912691751197961"
+     data-ad-slot="3351743605"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <section id="recetas" class="recipes-section">
+            <h2 style="text-align: center; color: white; margin-bottom: 2.5rem; font-size: 2.5rem; font-weight: 700;">✨ Recetas Populares de Batidos ✨</h2>
+            
+            <div class="recipes-grid">
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="fresa-platano.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=250&fit=crop" 
+                             alt="Batido de Fresa y Plátano" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🍓</div>
+                        <div class="recipe-header">
+                            <h3>Batido de Fresa y Plátano</h3>
+                            <p>Clásico y delicioso | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1 taza de fresas frescas</li>
+                            <li>1 plátano maduro</li>
+                        </ul>
+                        <a href="fresa-platano.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Rico en vitamina C, potasio y antioxidantes. Ideal para el desayuno.</p>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="verde-detox.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&h=250&fit=crop" 
+                             alt="Smoothie Verde Detox" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🥑</div>
+                        <div class="recipe-header">
+                            <h3>Smoothie Verde Detox</h3>
+                            <p>Saludable y nutritivo | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1 taza de espinacas frescas</li>
+                            <li>1/2 aguacate</li>
+                            <li>1 manzana verde</li>
+                        </ul>
+                        <a href="verde-detox.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Alto en fibra, vitaminas y minerales. Excelente para la digestión y energía.</p>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="proteico-chocolate.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&h=250&fit=crop" 
+                             alt="Batido Proteico de Chocolate" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🍫</div>
+                        <div class="recipe-header">
+                            <h3>Batido Proteico de Chocolate</h3>
+                            <p>Post-entrenamiento | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1 scoop de proteína de chocolate</li>
+                            <li>1 plátano</li>
+                            <li>2 cucharadas de mantequilla de maní</li>
+                        </ul>
+                        <a href="proteico-chocolate.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Alto en proteínas, ayuda a la recuperación muscular y sacia el hambre.</p>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="tropical-smoothie.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600&h=250&fit=crop" 
+                             alt="Smoothie Tropical" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🥭</div>
+                        <div class="recipe-header">
+                            <h3>Smoothie Tropical</h3>
+                            <p>Refrescante y exótico | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1 mango maduro</li>
+                            <li>1/2 taza de piña</li>
+                            <li>1/2 taza de yogur griego</li>
+                        </ul>
+                        <a href="tropical-smoothie.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Rico en vitaminas A y C, perfecto para el verano y la hidratación.</p>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="antioxidante-berries.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&h=250&fit=crop" 
+                             alt="Batido Antioxidante de Berries" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🫐</div>
+                        <div class="recipe-header">
+                            <h3>Batido Antioxidante de Berries</h3>
+                            <p>Energético y saludable | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1/2 taza de arándanos</li>
+                            <li>1/2 taza de frambuesas</li>
+                            <li>1/2 taza de moras</li>
+                        </ul>
+                        <a href="antioxidante-berries.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Súper antioxidante, combate el envejecimiento y fortalece el sistema inmune.</p>
+                    </div>
+                </article>
+
+                <article class="recipe-card">
+                    <!-- Reemplaza el src con tu imagen o usa una URL de Unsplash -->
+                    <a href="energetico-avena.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=600&h=250&fit=crop" 
+                             alt="Batido Energético de Avena" 
+                             class="recipe-image"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="recipe-image-placeholder" style="display:none;">🍌</div>
+                        <div class="recipe-header">
+                            <h3>Batido Energético de Avena</h3>
+                            <p>Desayuno completo | 5 minutos</p>
+                        </div>
+                    </a>
+                    <div class="recipe-content">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1/2 taza de avena</li>
+                            <li>1 plátano</li>
+                            <li>1 taza de leche</li>
+                        </ul>
+                        <a href="energetico-avena.html">Leer receta completa</a>
+                        <p style="margin-top: 1rem;"><strong>Beneficios:</strong> Alto en fibra y carbohidratos complejos, perfecto para empezar el día con energía.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="ebook-promo" style="background: linear-gradient(135deg, #00A0A0 0%, #FF6347 100%); color: white; text-align: center; padding: 4rem 2rem; margin: 2rem 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 3rem; max-width: 1000px; margin-bottom: 2rem;">
+                <img src="./images/ChatGPT Image 24 nov 2025, 10_53_53.png" alt="Portada Ebook" style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="text-align: left; flex: 1; min-width: 280px;">
+                    <h2 style="font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">¡Desbloquea el Sabor!</h2>
+                    <p style="font-size: 1.4rem; opacity: 0.95;">Disfruta de las recetas completas y muchas más en nuestro E-Book, ¡en oferta por tiempo limitado!</p>
+                </div>
+            </div>
+            <a href="https://pay.hotmart.com/W103100195C" style="padding: 1rem 3rem; background: white; color: #FF6347; text-decoration: none; border-radius: 50px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.2)';">COMPRAR AHORA</a>
+        </section>
+
+        <section id="potencia" class="power-up-section">
+            <h2>💪 ¡Potencia Tus Batidos!</h2>
+            <p>Puedes añadir proteína en polvo y creatina a casi todas estas recetas para potenciar tus objetivos de fitness. <br>Calcula tu dosis diaria recomendada con nuestras herramientas:</p>
+            <div class="calc-buttons">
+                <a href="calculadora.html" class="calc-btn">Calcular Proteína</a>
+                <a href="creatina.html" class="calc-btn">Calcular Creatina</a>
+            </div>
+        </section>
+
+<!-- anuncio adsense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3912691751197961"
+     data-ad-slot="3351743605"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <section id="beneficios" class="benefits">
+            <h2>Beneficios de los Batidos Saludables</h2>
+            <p>Los batidos y smoothies no solo son deliciosos, sino que también aportan numerosos beneficios para tu salud:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>🌟 Nutrición Completa</h3>
+                    <p>Consume múltiples porciones de frutas y verduras en un solo vaso, obteniendo vitaminas, minerales y antioxidantes esenciales.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>⚡ Energía Inmediata</h3>
+                    <p>Los azúcares naturales de las frutas proporcionan energía rápida sin el bajón que causan los azúcares refinados.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🏋️ Recuperación Muscular</h3>
+                    <p>Los batidos proteicos ayudan a reparar y construir músculo después del ejercicio.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>💧 Hidratación</h3>
+                    <p>Las frutas y verduras tienen alto contenido de agua, manteniendo tu cuerpo hidratado.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎯 Control de Peso</h3>
+                    <p>Los batidos saludables pueden ayudarte a controlar el apetito y sustituir comidas menos nutritivas.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🌿 Digestión Mejorada</h3>
+                    <p>La fibra de frutas y verduras promueve una digestión saludable y regular.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="consejos" class="tips">
+            <h2>Consejos para Preparar los Mejores Batidos</h2>
+            <ol>
+                <li>🧊 <strong>Usa frutas congeladas:</strong> Las frutas congeladas hacen que tus batidos sean más espesos y cremosos sin necesidad de añadir tanto hielo, además mantienen todos sus nutrientes.</li>
+                <li>🥬 <strong>Añade verduras de hoja verde:</strong> Espinacas, kale o acelgas son prácticamente insípidas en batidos pero añaden toneladas de nutrientes sin alterar el sabor.</li>
+                <li>🍋 <strong>Equilibra los sabores:</strong> Combina frutas dulces con ácidas para lograr un sabor balanceado. El plátano y el mango van bien con frutas cítricas.</li>
+                <li>🥜 <strong>No olvides la proteína:</strong> Añade yogur griego, mantequilla de nueces, semillas de chía o proteína en polvo para que tu batido sea más satisfactorio.</li>
+                <li>✨ <strong>Experimenta con superalimentos:</strong> Prueba añadir spirulina, açaí, matcha, cacao crudo o semillas de hemp para un impulso nutricional extra.</li>
+                <li>💧 <strong>Controla los líquidos:</strong> Empieza con menos líquido y añade más si es necesario. Es más fácil diluir un batido espeso que espesar uno aguado.</li>
+                <li>🛍️ <strong>Prepara con anticipación:</strong> Puedes preparar packs de ingredientes congelados en bolsas para tener batidos listos en minutos cada mañana.</li>
+                <li>🚗 <strong>Transporta tus batidos:</strong> Para disfrutar de tus smoothies fuera de casa, un buen <a href="https://amzn.to/4oSokmB" target="_blank" rel="noopener sponsored">termo Stanley</a> los mantendrá fríos por horas. Si prefieres algo clásico y versátil para preparaciones en casa o llevar, las <a href="https://amzn.to/4aaBSFv" target="_blank" rel="noopener sponsored">Jarras Mason</a> son perfectas.</li>
+                <li>⚡ <strong>Invierte en una buena licuadora:</strong> Una licuadora potente es clave. Para empezar y para recetas sencillas, una <a href="https://amzn.to/3XIDHSC" target="_blank" rel="noopener sponsored">batidora de mano</a> es versátil y fácil de limpiar. Si buscas la máxima cremosidad y potencia para ingredientes duros como hielo o frutos secos, te recomendamos una <a href="https://amzn.to/4pfp99z" target="_blank" rel="noopener sponsored">batidora de vaso</a> de alta velocidad.</li>
+            </ol>
+        </section>
+
+        <section id="equipo" class="equipo-section">
+            <h2 style="text-align: center; color: white; margin-bottom: 2.5rem; font-size: 2.5rem; font-weight: 700;">⚙️ Nuestro Equipo Recomendado ⚙️</h2>
+            <div class="equipo-grid">
+                <!-- Tarjeta Batidora de Vaso -->
+                <div class="equipo-card">
+                    <img src="https://m.media-amazon.com/images/I/71E4SwA5JuL._AC_SX679_.jpg" alt="Batidora de Vaso de Alta Potencia" class="equipo-product-image">
+                    <h3>Batidora de Vaso de Alta Potencia</h3>
+                    <p>La mejor opción para obtener texturas ultra cremosas, triturar hielo y procesar ingredientes duros sin esfuerzo.</p>
+                    <a href="https://amzn.to/4pfp99z" target="_blank" rel="noopener sponsored" class="btn-equipo">Ver en Amazon</a>
+                </div>
+
+                <!-- Tarjeta Batidora de Mano -->
+                <div class="equipo-card">
+                    <img src="https://m.media-amazon.com/images/I/51+OBo1vLGL._AC_SX679_.jpg" alt="Batidora de Mano Versátil" class="equipo-product-image">
+                    <h3>Batidora de Mano Versátil</h3>
+                    <p>Perfecta para iniciarse, para recetas rápidas y para una limpieza sencilla. Ideal para batidos directos en el vaso.</p>
+                    <a href="https://amzn.to/3XIDHSC" target="_blank" rel="noopener sponsored" class="btn-equipo">Ver en Amazon</a>
+                </div>
+
+                <!-- Tarjeta Termo -->
+                <div class="equipo-card">
+                    <img src="https://m.media-amazon.com/images/I/61M+5xTxWOL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Termo de Acero Inoxidable" class="equipo-product-image">
+                    <h3>Termo de Acero Inoxidable</h3>
+                    <p>Mantiene tus smoothies fríos durante horas. Ideal para llevar tus bebidas al trabajo, al gimnasio o de viaje.</p>
+                    <a href="https://amzn.to/4oSokmB" target="_blank" rel="noopener sponsored" class="btn-equipo">Ver en Amazon</a>
+                </div>
+
+                <!-- Tarjeta Jarras Mason -->
+                <div class="equipo-card">
+                    <img src="https://m.media-amazon.com/images/I/91+biB8Vv-L._AC_SX679_.jpg" alt="Jarras de Vidrio (Mason Jars)" class="equipo-product-image">
+                    <h3>Jarras de Vidrio (Mason Jars)</h3>
+                    <p>Una opción clásica y con estilo para disfrutar de tus batidos en casa. Perfectas para fotos y preparaciones.</p>
+                    <a href="https://amzn.to/4aaBSFv" target="_blank" rel="noopener sponsored" class="btn-equipo">Ver en Amazon</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2 style="text-align: center; color: #00A0A0; margin-bottom: 2.5rem; font-size: 2.5rem; font-weight: 700;">✍️ Artículos de Interés</h2>
+            <div class="blog-grid">
+                <!-- Tarjeta de Artículo 1 -->
+                <article class="article-card">
+                    <a href="beneficios-proteina.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=600&h=400&fit=crop" alt="Alimentos ricos en proteína" class="article-card-image">
+                        <div class="article-card-content">
+                            <h3>5 Beneficios Clave de una Dieta Alta en Proteínas</h3>
+                            <p>Descubre por qué la proteína es mucho más que un constructor de músculo. Desde el control del peso hasta la salud ósea, te contamos sus beneficios más importantes.</p>
+                        </div>
+                    </a>
+                    <div style="padding: 0 1.5rem 1.5rem;">
+                        <a href="beneficios-proteina.html" class="btn-article">Leer Artículo</a>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de Artículo 2 -->
+                <article class="article-card">
+                    <a href="guia-creatina.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=600&h=400&fit=crop" alt="Polvo de creatina en una cuchara" class="article-card-image">
+                        <div class="article-card-content">
+                            <h3>Guía Definitiva de la Creatina para Principiantes</h3>
+                            <p>¿Qué es la creatina? ¿Es segura? ¿Cómo se toma? Resolvemos todas tus dudas sobre uno de los suplementos más efectivos y estudiados del mercado.</p>
+                        </div>
+                    </a>
+                    <div style="padding: 0 1.5rem 1.5rem;">
+                        <a href="guia-creatina.html" class="btn-article">Leer Artículo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+<!-- anuncio adsense -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3912691751197961"
+     data-ad-slot="3351743605"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ShakeWay.store - Tu fuente de inspiración para batidos saludables</p>
+        <p style="margin-top: 1.5rem; font-size: 1rem;">
+            <a href="about.html" style="color: white; text-decoration: none; margin: 0 10px;">Sobre Nosotros</a> |
+            <a href="contact.html" style="color: white; text-decoration: none; margin: 0 10px;">Contacto</a> |
+            <a href="politica-privacidad.html" style="color: white; text-decoration: none; margin: 0 10px;">Política de Privacidad</a>
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Todas las recetas son sugerencias. Consulta a un profesional de salud para dietas específicas.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

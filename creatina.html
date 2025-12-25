@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2YZHEPBR2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W2YZHEPBR2');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Creatina - ShakeWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FDF5E6; /* Light Sand */
+        }
+        header {
+            background: linear-gradient(135deg, #FF6347 0%, #FFC107 100%); /* Coral to Mango */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+        }
+        .calculator-wrapper {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 160, 160, 0.15); /* Teal shadow */
+            border-left: 5px solid #00A0A0; /* Teal */
+            text-align: center;
+        }
+        .calculator-wrapper h2 {
+            color: #00A0A0; /* Teal */
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .calculator-wrapper p {
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        #peso {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        #peso:focus {
+            outline: none;
+            border-color: #00A0A0; /* Teal */
+        }
+        button {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00A0A0 0%, #FFC107 100%); /* Teal to Mango */
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 160, 160, 0.4); /* Teal shadow */
+        }
+        #resultado {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF6347; /* Coral */
+            min-height: 50px;
+            padding: 1rem;
+            background: #FFF5EE; /* SeaShell */
+            border-radius: 10px;
+            border: 2px dashed #FFDAB9; /* PeachPuff */
+        }
+        .explanation {
+            margin-top: 2rem !important;
+            font-size: 0.9rem;
+            color: #777 !important;
+        }
+        .back-link {
+            margin-top: 3rem;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #00A0A0; /* Teal */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .back-link a:hover {
+            color: #FF6347; /* Coral */
+        }
+        .ad-space {
+            background: linear-gradient(135deg, #F0FFF0 0%, #E0FFFF 100%); /* Light mint/cyan gradient */
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem auto;
+            border-radius: 15px;
+            border: 3px dashed rgba(0, 160, 160, 0.4);
+            max-width: 600px;
+        }
+        footer {
+            background: #008080; /* Solid Teal */
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3912691751197961"
+     crossorigin="anonymous"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196088" async data-cfasync="false"></script>
+</head>
+<body>
+
+    <header>
+        <h1>ShakeWay</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="calculator-wrapper">
+            <h2>Calculadora de Creatina Diaria</h2>
+            <p>Ingresa tu peso en kilogramos (kg) y selecciona tu nivel de actividad y fase para estimar tu dosis diaria de creatina.</p>
+            
+            <label for="actividad_creatina" style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: bold; text-align: left;">Nivel de Actividad:</label>
+            <select id="actividad_creatina" style="width: 100%; padding: 1rem; margin-bottom: 1.5rem; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1rem; appearance: none; background-color: #fff; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300A0A0%22%20d%3D%22M287%2C114.7L159.1%2C242.6c-5.4%2C5.4-14.2%2C5.4-19.6%2C0L5.3%2C114.7c-5.4-5.4-5.4-14.2%2C0-19.6s14.2-5.4%2C19.6%2C0l124.6%2C124.6l124.6-124.6c5.4-5.4%2C14.2-5.4%2C19.6%2C0S292.4%2C109.3%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; cursor: pointer;">
+                <option value="baja">Baja (0.05 g/kg)</option>
+                <option value="moderada">Moderada (0.07 g/kg)</option>
+                <option value="alta">Alta (0.1 g/kg)</option>
+            </select>
+
+            <label for="fase_creatina" style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: bold; text-align: left;">Fase de Suplementación:</label>
+            <select id="fase_creatina" style="width: 100%; padding: 1rem; margin-bottom: 1.5rem; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1rem; appearance: none; background-color: #fff; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300A0A0%22%20d%3D%22M287%2C114.7L159.1%2C242.6c-5.4%2C5.4-14.2%2C5.4-19.6%2C0L5.3%2C114.7c-5.4-5.4-5.4-14.2%2C0-19.6s14.2-5.4%2C19.6%2C0l124.6%2C124.6l124.6-124.6c5.4-5.4%2C14.2-5.4%2C19.6%2C0S292.4%2C109.3%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; cursor: pointer;">
+                <option value="mantenimiento">Mantenimiento (dosis por peso)</option>
+                <option value="carga">Fase de Carga (20g fijos)</option>
+            </select>
+            
+            <input type="number" id="peso" placeholder="Tu peso en kg" min="1">
+            <button onclick="calcularCreatina()">Calcular mi Creatina</button>
+            
+            <div id="resultado">Tu resultado aparecerá aquí</div>
+            
+            <p class="explanation">
+                Esta calculadora estima la dosis de mantenimiento usando una fórmula de 0.07g por kg de peso corporal. 
+                Muchos protocolos también incluyen una "fase de carga" inicial de 20g diarios durante 5-7 días, que no se calcula aquí.
+                Consulta a un profesional para recomendaciones personalizadas.
+            </p>
+
+            <div class="back-link">
+                <a href="index.html">← Volver a la página principal</a>
+            </div>
+
+            <div class="affiliate-products" style="margin-top: 3rem; text-align: left; border-top: 2px solid #eee; padding-top: 2rem;">
+                <h3 style="text-align: center; color: #00A0A0; margin-bottom: 2rem; font-size: 1.8rem;">Productos Recomendados</h3>
+                <div style="display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: nowrap; overflow-x: auto; gap: 2rem;">
+
+                    <div class="product-item" style="text-align: center; max-width: 270px;">
+                        <h4 style="color: #333; margin-bottom: 1rem;">Creatina Creapure®</h4>
+                        <iframe style="width:265px;height:490px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" readonly="readonly" src="https://www.hsnstore.com/hsnaffiliate/iframe/product/?border=1&typeline=solid&colorline=%23ff6000&colortext=%23000000&colorlink=%23ff6000&showprice=1&showbtnbuy=1&targetblankiframe=0&linkid=cHJvZHVjdHx8SFJTLUNSRUF8fE1NR0VUQUZFfHxodHRwczovL3d3dy5oc25zdG9yZS5jb20vbWFyY2FzL3Jhdy1zZXJpZXMvY3JlYXRpbmEtZXhjZWxsLTEwMC1jcmVhcHVyZS1lbi1wb2x2bw=="></iframe>
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 1rem;">La patente Creapure® asegura la máxima pureza y calidad. Ideal para aumentar tu fuerza, potencia y rendimiento en entrenamientos de alta intensidad. Un suplemento esencial para ganar masa muscular.</p>
+                    </div>
+
+                    <div class="product-item" style="text-align: center; max-width: 270px;">
+                        <h4 style="color: #333; margin-bottom: 1rem;">Proteína Whey Isolate</h4>
+                        <iframe style="width:265px;height:490px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" readonly="readonly" src="https://www.hsnstore.com/hsnaffiliate/iframe/product/?border=1&typeline=solid&colorline=%23ff6000&colortext=%23000000&colorlink=%23ff6000&showprice=1&showbtnbuy=1&targetblankiframe=0&linkid=cHJvZHVjdHx8SFJTLVdQSXx8TU1HRVRBRkV8fGh0dHBzOi8vd3d3LmhzbnN0b3JlLmNvbS9tYXJjYXMvcmF3LXNlcmllcy8xMDAtd2hleS1wcm90ZWluLWlzb2xhdGU="></iframe>
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 1rem;">Proteína de suero de leche aislada de alta calidad. Perfecta para la recuperación muscular después del ejercicio y para asegurar que cumples tus requerimientos diarios de proteína de forma fácil y deliciosa.</p>
+                    </div>
+
+                    <div class="product-item" style="text-align: center; max-width: 270px;">
+                        <h4 style="color: #333; margin-bottom: 1rem;">Multivitamínico Evovits</h4>
+                        <iframe style="width:265px;height:490px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" readonly="readonly" src="https://www.hsnstore.com/hsnaffiliate/iframe/product/?border=1&typeline=solid&colorline=%23ff6000&colortext=%23000000&colorlink=%23ff6000&showprice=1&showbtnbuy=1&targetblankiframe=0&linkid=cHJvZHVjdHx8SFNOUy1WSXx8TU1HRVRBRkV8fHxodHRwczovL3d3dy5oc25zdG9yZS5jb20vbWFyY2FzL3Nwb3J0LXNlcmllcy9ldm92aXRzLW11bHRpdml0YW1pbmljbw=="></iframe>
+                        <p style="font-size: 0.9rem; color: #555; margin-top: 1rem;">Multivitamínico esencial para asegurar que tu cuerpo recibe todas las vitaminas y minerales necesarios para un óptimo funcionamiento, apoyo inmunológico y energía diaria. Ideal para complementar tu dieta.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <!-- anuncio adsense -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3912691751197961"
+             data-ad-slot="3351743605"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ShakeWay.store - Tu fuente de inspiración para batidos saludables</p>
+        <p style="margin-top: 1.5rem; font-size: 1rem;">
+            <a href="about.html" style="color: white; text-decoration: none; margin: 0 10px;">Sobre Nosotros</a> |
+            <a href="contact.html" style="color: white; text-decoration: none; margin: 0 10px;">Contacto</a> |
+            <a href="politica-privacidad.html" style="color: white; text-decoration: none; margin: 0 10px;">Política de Privacidad</a>
+        </p>
+    </footer>
+
+    <script>
+        function calcularCreatina() {
+            const pesoInput = document.getElementById('peso');
+            const actividadSelect = document.getElementById('actividad_creatina');
+            const faseSelect = document.getElementById('fase_creatina');
+            const resultadoDiv = document.getElementById('resultado');
+            const peso = parseFloat(pesoInput.value);
+            const actividad = actividadSelect.value;
+            const fase = faseSelect.value;
+
+            let multiplicadorCreatina;
+            let explicacionRecomendacion;
+            let creatinaRecomendada;
+
+            if (fase === 'carga') {
+                creatinaRecomendada = 20; // Fixed 20g for loading phase
+                explicacionRecomendacion = "Durante la fase de carga (5-7 días), se recomiendan 20g diarios para saturar los músculos.";
+            } else { // Mantenimiento
+                switch (actividad) {
+                    case 'baja':
+                        multiplicadorCreatina = 0.05;
+                        explicacionRecomendacion = "Esta recomendación es para personas con actividad física baja.";
+                        break;
+                    case 'moderada':
+                        multiplicadorCreatina = 0.07;
+                        explicacionRecomendacion = "Esta recomendación es para personas con actividad física moderada.";
+                        break;
+                    case 'alta':
+                        multiplicadorCreatina = 0.1;
+                        explicacionRecomendacion = "Esta recomendación es para personas con actividad física alta o atletas.";
+                        break;
+                    default:
+                        multiplicadorCreatina = 0.07; // Default to moderate activity
+                        explicacionRecomendacion = "Recomendación estándar para la fase de mantenimiento.";
+                }
+                creatinaRecomendada = (peso * multiplicadorCreatina).toFixed(1);
+            }
+
+            if (peso > 0) {
+                resultadoDiv.innerHTML = `Tu dosis de ${fase === 'carga' ? 'carga' : 'mantenimiento'} es aprox. <strong>${creatinaRecomendada} gramos</strong> al día.`;
+                document.querySelector('.explanation').innerHTML = `<strong>Nota:</strong> ${explicacionRecomendacion} Consulta a un profesional para recomendaciones personalizadas.`;
+            } else {
+                resultadoDiv.textContent = 'Por favor, ingresa un peso válido.';
+                document.querySelector('.explanation').innerHTML = '<strong>Nota:</strong> Ingresa tu peso y selecciona tu actividad/fase para obtener una recomendación.';
+                pesoInput.focus();
+            }
+        }
+        
+        document.getElementById('peso').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calcularCreatina();
+            }
+        });
+
+        // Add event listeners for activity and phase select changes
+        document.getElementById('actividad_creatina').addEventListener('change', calcularCreatina);
+        document.getElementById('fase_creatina').addEventListener('change', calcularCreatina);
+    </script>
+
+</body>
+</html>

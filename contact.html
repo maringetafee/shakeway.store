@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2YZHEPBR2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W2YZHEPBR2');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ponte en contacto con ShakeWay. Envíanos tus preguntas, sugerencias o comentarios a través de nuestro formulario de contacto.">
+    <title>Contacto - ShakeWay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.8; color: #333; background-color: #FDF5E6; }
+        header { background: linear-gradient(135deg, #FF6347 0%, #FFC107 100%); color: white; padding: 2rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        header h1 { font-family: 'Pacifico', cursive; font-size: 3.5rem; font-weight: 400; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .contact-section { background: white; padding: 2.5rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(0, 160, 160, 0.1); }
+        .contact-section h2 { color: #00A0A0; margin-bottom: 1.5rem; font-size: 2.5rem; text-align: center; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555; }
+        .form-group input, .form-group textarea { width: 100%; padding: 1rem; border: 2px solid #ddd; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #00A0A0; }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+        .submit-btn { display: block; width: 100%; padding: 1rem; border: none; border-radius: 50px; background: linear-gradient(135deg, #00A0A0 0%, #FFC107 100%); color: white; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 160, 160, 0.4); }
+        .contact-info { text-align: center; margin-top: 3rem; }
+        .contact-info p { margin-bottom: 0.5rem; }
+        .back-link { margin-top: 2rem; text-align: center; }
+        .back-link a { text-decoration: none; color: #00A0A0; font-weight: bold; transition: color 0.3s; font-size: 1.1rem; }
+        .back-link a:hover { color: #FF6347; }
+        footer { background: #008080; color: white; text-align: center; padding: 3rem 2rem; margin-top: 3rem; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3912691751197961"
+     crossorigin="anonymous"></script>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196088" async data-cfasync="false"></script>
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="color: white; text-decoration: none;">ShakeWay</a></h1>
+    </header>
+
+    <div class="container">
+        <section class="contact-section">
+            <h2>Ponte en Contacto</h2>
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+            <div id="form-status" style="text-align: center; margin-top: 1.5rem; font-weight: bold;"></div>
+            
+            <div class="contact-info">
+                <h3>Otras formas de contactar</h3>
+                <p><strong>Email:</strong> <a href="mailto:sergiocaceres539@gmail.com">sergiocaceres539@gmail.com</a></p>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html">← Volver a la página principal</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ShakeWay.store - Tu fuente de inspiración para batidos saludables</p>
+    </footer>
+
+    <script>
+        // Simple script to prevent form submission and show a message
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formStatus = document.getElementById('form-status');
+            formStatus.textContent = '¡Gracias por tu mensaje! (Función de envío no implementada en esta demostración).';
+            formStatus.style.color = '#2E8B57';
+        });
+    </script>
+
+</body>
+</html>
